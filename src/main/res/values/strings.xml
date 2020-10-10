@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Tv</string>
+    <string name="log_in">Log In</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="tv">TV</string>
+    <string name="youtube">Youtube</string>
+    <string name="movies">Filma</string>
+    <string name="series">Seriale</string>
+    <string name="cache">Cache</string>
+    <string name="link">Link</string>
+    <string name="hideBtn">Mbyll</string>
+
+    <string name="shared_prefs_name">log_in_info</string>
+    <string name="install_key">install_key</string>
+    <string name="user_key">username_key</string>
+
+    <string name="api_link">http://10.10.11.11/sup2/api/</string>
+    <string name="search">Search</string>
+    <string name="exit">Exit</string>
+
+</resources>

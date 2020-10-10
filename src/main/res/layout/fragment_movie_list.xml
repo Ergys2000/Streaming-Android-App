@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <EditText
+            android:id="@+id/search_view"
+            android:visibility="visible"
+            android:hint="@string/search"
+            android:layout_weight="0.8"
+            android:layout_width="0dp"
+            android:layout_height="50dp"/>
+        <Button
+            android:id="@+id/search"
+            android:layout_gravity="end"
+            android:text="@string/search"
+            style="@style/light_button"
+            android:layout_weight="0.2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/movie_recycler_view"/>
+</LinearLayout>

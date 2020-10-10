@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#b50000</color>
+    <color name="colorPrimaryTransparent">#90000000</color>
+    <color name="colorPrimaryDark">#6e0000</color>
+    <color name="colorAccent">#660202</color>
+
+    <color name="gray">#adadad</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="windowBackground">@color/colorPrimary</color>
+
+    <color name="menuBackground">#99000000</color>
+    <color name="channelViewFocused">#6e0000</color>
+    <color name="buttonFocused">#919191</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="movieFocused">#6e0000</color>
+</resources>
