@@ -217,7 +217,7 @@ class MenuChannelViewFragment: Fragment(), ChannelAdapter.Callbacks{
             player.videoScalingMode = C.VIDEO_SCALING_MODE_SCALE_TO_FIT
             playerView.player = player
             player.playWhenReady = true
-            playerView.resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FIT
+            playerView.resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FILL
         }
         catch(e: Exception){
             e.printStackTrace()

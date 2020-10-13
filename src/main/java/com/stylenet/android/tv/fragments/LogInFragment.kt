@@ -87,7 +87,9 @@ class LogInFragment: Fragment() {
         }
         exitButton.apply{
             setOnClickListener {
-                requireActivity().finish()
+                val fragment = ExitDialogFragment()
+                fragment.show(childFragmentManager, "ExitDialog")
+                //requireActivity().finish()
             }
             setOnFocusChangeListener{ v, hasFocus ->
                 if(hasFocus){

@@ -4,10 +4,12 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.android.volley.Request
@@ -23,6 +25,7 @@ class FrontPageFragment: Fragment() {
     private lateinit var moviesButton: Button
     private lateinit var seriesButton: Button
     private lateinit var exitButton: Button
+
 
     private var database: Database = Database.get()
     private lateinit var requestLink: String
@@ -169,7 +172,9 @@ class FrontPageFragment: Fragment() {
                 }
             }
             setOnClickListener {
-                requireActivity().finish()
+                val fragment = ExitDialogFragment()
+                fragment.show(childFragmentManager, "ExitDialog")
+                //requireActivity().finish()
 /*
                 val intent = Intent(Intent.ACTION_MAIN)
                 intent.addCategory("android.intent.category.MONKEY")
@@ -202,16 +207,21 @@ class FrontPageFragment: Fragment() {
 
     // functions for kicking a user out or updating the channels
     private fun returnHomeScreen(){
-        val fManager = activity!!.supportFragmentManager
-        val logInFragment = LogInFragment()
+        try{
+            val fManager = activity!!.supportFragmentManager
+            val logInFragment = LogInFragment()
 
-        for(i in 0 .. fManager.backStackEntryCount){
-            fManager.popBackStack()
+            for(i in 0 .. fManager.backStackEntryCount){
+                fManager.popBackStack()
+            }
+            fManager
+                .beginTransaction()
+                .replace(R.id.fragment_container, logInFragment)
+                .commit()
+        }catch (e: Exception){
+            Log.e("FrontPageFragment: ", e.message.toString())
+            requireActivity().finish()
         }
-        fManager
-            .beginTransaction()
-            .replace(R.id.fragment_container, logInFragment)
-            .commit()
     }
     private fun updateChannels(){
         val fManager = activity!!.supportFragmentManager

@@ -15,8 +15,10 @@
     <string name="install_key">install_key</string>
     <string name="user_key">username_key</string>
 
-    <string name="api_link">http://10.10.11.11/sup2/api/</string>
+    <string name="api_link">http://s.sn-iptv.com/sup2/api/</string>
     <string name="search">Search</string>
     <string name="exit">Exit</string>
+
+    <string name="exit_password">ehadi</string>
 
 </resources>
