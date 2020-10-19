@@ -22,7 +22,6 @@ import com.stylenet.android.tv.models.Database
 
 class LogInFragment: Fragment() {
     private lateinit var logInButton: Button
-    private lateinit var exitButton: Button
     private lateinit var progressBar: ProgressBar
 
     private var callbacks: Callbacks? = null
@@ -48,7 +47,6 @@ class LogInFragment: Fragment() {
         val view = inflater.inflate(R.layout.fragment_log_in, container, false)
 
         logInButton = view.findViewById(R.id.log_in)
-        exitButton = view.findViewById(R.id.exit)
         progressBar = view.findViewById(R.id.progress_circular)
         checkSharedPrefs() // this needs to be here because the fragment needs to be attached
 
@@ -82,20 +80,6 @@ class LogInFragment: Fragment() {
                 val username = database.username
                 if(install_key != null && username != null){
                     authenticate(username, install_key)
-                }
-            }
-        }
-        exitButton.apply{
-            setOnClickListener {
-                val fragment = ExitDialogFragment()
-                fragment.show(childFragmentManager, "ExitDialog")
-                //requireActivity().finish()
-            }
-            setOnFocusChangeListener{ v, hasFocus ->
-                if(hasFocus){
-                    v?.setBackgroundColor(resources.getColor(R.color.buttonFocused))
-                }else{
-                    v?.setBackgroundColor(resources.getColor(R.color.white))
                 }
             }
         }

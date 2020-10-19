@@ -31,6 +31,7 @@ import com.google.android.exoplayer2.ui.AspectRatioFrameLayout
 import com.google.android.exoplayer2.ui.PlayerView
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
+import com.google.android.exoplayer2.video.VideoListener
 import com.stylenet.android.tv.R
 import com.stylenet.android.tv.adapters.ChannelAdapter
 import com.stylenet.android.tv.models.Channel

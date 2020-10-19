@@ -24,7 +24,6 @@ class FrontPageFragment: Fragment() {
     private lateinit var youtubeButton: Button
     private lateinit var moviesButton: Button
     private lateinit var seriesButton: Button
-    private lateinit var exitButton: Button
 
 
     private var database: Database = Database.get()
@@ -65,7 +64,6 @@ class FrontPageFragment: Fragment() {
         youtubeButton = view.findViewById(R.id.youtube)
         moviesButton = view.findViewById(R.id.movies)
         seriesButton = view.findViewById(R.id.series)
-        exitButton = view.findViewById(R.id.exit)
         return view
     }
 
@@ -161,25 +159,6 @@ class FrontPageFragment: Fragment() {
             }
             setOnClickListener {
                 callbacks?.onSeriesListClicked()
-            }
-        }
-        exitButton.apply{
-            onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
-                if(hasFocus){
-                    v?.setBackgroundColor(resources.getColor(R.color.buttonFocused))
-                }else{
-                    v?.setBackgroundColor(resources.getColor(R.color.white))
-                }
-            }
-            setOnClickListener {
-                val fragment = ExitDialogFragment()
-                fragment.show(childFragmentManager, "ExitDialog")
-                //requireActivity().finish()
-/*
-                val intent = Intent(Intent.ACTION_MAIN)
-                intent.addCategory("android.intent.category.MONKEY")
-                startActivity(intent)
-*/
             }
         }
     }
