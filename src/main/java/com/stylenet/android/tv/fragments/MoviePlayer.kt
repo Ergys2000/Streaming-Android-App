@@ -113,7 +113,6 @@ class MoviePlayer: Fragment(), SettingsDialogFragment.Callbacks{
 
                 val fragmentManager = childFragmentManager
                 val fragment = SettingsDialogFragment.newInstance(isChecked, speed)
-                //val fragment = ChannelListDialogFragment()
                 fragment.show(fragmentManager, "dialog")
             }
             setOnFocusChangeListener { v, hasFocus ->
